@@ -32,7 +32,7 @@
                    
     <instantiate from="root/src/app_package/DataRepository.${ktOrJavaExt}.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${className}DataRepository.${ktOrJavaExt}" />
-
+<#if includeTest>
     <instantiate from="root/test/app_package/DataRepositoryTest.${ktOrJavaExt}.ftl"
                     to="${escapeXmlAttribute(unitTestOut)}/${className}DataRepositoryTest.${ktOrJavaExt}" />
 
@@ -41,7 +41,7 @@
                     
     <instantiate from="root/test/app_package/ViewTest.${ktOrJavaExt}.ftl"
                     to="${escapeXmlAttribute(androidTest)}/${className}ViewTest.${ktOrJavaExt}" />
-
+</#if>
     <open file="${escapeXmlAttribute(srcOut)}/model/${className}DisplayData.${ktOrJavaExt}" />
     <open file="${escapeXmlAttribute(srcOut)}/${className}ViewModel.${ktOrJavaExt}" />
     <open file="${escapeXmlAttribute(srcOut)}/${className}DataRepository.${ktOrJavaExt}" />
