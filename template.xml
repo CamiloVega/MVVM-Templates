@@ -2,7 +2,7 @@
 <template format="5"
         revision="1"
         name="MVVM + Test"
-        description="Creates a new MVVM Fragment">
+        description="Creates a new MVVM set of classes (View, ViewModel and Data Repository)">
     
     <category value="MVVM Template"/>
  
@@ -13,13 +13,13 @@
         default="FeatureName"
         help="The name of the functionality or feature"/>
 
-<parameter
+    <parameter
         id="isActivity"
         name="Activity"
         type="boolean"
         default="false"
         visibility="!isFragment"
-        help="Generate a layout XML for the fragment" />
+        help="Is this an Activity" />
 
     <parameter
         id="isFragment"
@@ -27,33 +27,32 @@
         type="boolean"
         default="false"
         visibility="!isActivity"
-        help="Generate a layout XML for the fragment" />
+        help="is this a fragment?" />
 
     <parameter
         id="includeLayout"
         name="Create layout XML?"
         type="boolean"
         default="true"
-        help="Generate a layout XML for the fragment" />
+        help="Generate a layout XML for the View" />
 
     <parameter
         id="includeTest"
         name="Create test for the generated files"
         type="boolean"
         default="true"
-        help="Generate a test for the Fragment, View Model and Data Repository" />
+        help="Generate a test for the View, View Model and Data Repository" />
 
     <parameter
         id="fragmentName"
-        name="Fragment Layout Name"
+        name="View Layout Name"
         type="string"
-        constraints="layout|nonempty|unique|isFragment|isActivity"
+        constraints="layout|nonempty|unique"
         default="fragment_blank"
         visibility="includeLayout"
         suggest="${classToResource(className)}_#"
         help="The name of the layout to create" />
 
- 
     <globals file="globals.xml.ftl" />
     <execute file="recipe.xml.ftl" />
  
