@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<template format="5"
+        revision="1"
+        name="MVVM + Test"
+        description="Creates a new MVVM Fragment (DONT FORGET TO ADD TO VIEWBINDINGMODULE!!!)">
+    
+    <category value="MVVM Template"/>
+ 
+    <parameter id="className"
+        name="Functionality Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="FeatureName"
+        help="The name of the functionality or feature"/>
+
+<parameter
+        id="isActivity"
+        name="Activity"
+        type="boolean"
+        default="false"
+        visibility="!isFragment"
+        help="Generate a layout XML for the fragment" />
+
+    <parameter
+        id="isFragment"
+        name="Fragment"
+        type="boolean"
+        default="false"
+        visibility="!isActivity"
+        help="Generate a layout XML for the fragment" />
+
+    <parameter
+        id="includeLayout"
+        name="Create layout XML?"
+        type="boolean"
+        default="true"
+        help="Generate a layout XML for the fragment" />
+
+    <parameter
+        id="fragmentName"
+        name="Fragment Layout Name"
+        type="string"
+        constraints="layout|nonempty|unique"
+        default="fragment_blank"
+        visibility="includeLayout"
+        suggest="${classToResource(className)}_"
+        help="The name of the layout to create" />
+ 
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+ 
+</template>
