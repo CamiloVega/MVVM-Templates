@@ -4,7 +4,7 @@
         name="MVVM + Test"
         description="Creates a new MVVM set of classes (View, ViewModel and Data Repository)">
     
-    <category value="MVVM Template"/>
+    <category value="Custom Template"/>
  
     <parameter id="className"
         name="Functionality Name"

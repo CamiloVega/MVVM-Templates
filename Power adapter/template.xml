@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<template format="5"
+        revision="1"
+        name="Power Adapter"
+        description="Creates a new Recycler view using the power adapter">
+    
+    <category value="Custom Template"/>
+ 
+    <parameter id="itemName"
+        name="Items Name"
+        type="string"
+        constraints="unique|nonempty"
+        default="RecyclerItem"
+        help="The name of the functionality or feature"/>
+
+    <parameter
+        id="itemLayoutName"
+        name="View Layout Name"
+        type="string"
+        constraints="layout|nonempty|unique"
+        default="item_blank"
+        suggest="${classToResource(itemName)}_item"
+        help="The name of the layout to create" />
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+ 
+</template>
