@@ -5,10 +5,10 @@
 
  <#if includeLayout>
         <instantiate from="root/res/layout/fragment_blank.xml.ftl"
-                       to="${escapeXmlAttribute(resOut)}/layout/${escapeXmlAttribute(itemLayoutName)}.xml" />
+                       to="${escapeXmlAttribute(resOut)}/layout/${escapeXmlAttribute(fragmentName)}.xml" />
 
-       <open file="${escapeXmlAttribute(resOut)}/layout/${escapeXmlAttribute(itemLayoutName)}.xml" />
- </#if>
+        <open file="${escapeXmlAttribute(resOut)}/layout/${escapeXmlAttribute(fragmentName)}.xml" />
+    </#if>
 
     <mkdir at="${escapeXmlAttribute(srcOut)}/model" />
 
