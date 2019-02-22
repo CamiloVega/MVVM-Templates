@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.${itemLayoutName}.view.*
 import javax.inject.Inject
 
-class ${itemName}Renderer @Inject constructor(): ItemRenderer<${itemName}DisplayData> {
+class ${itemName}Renderer @Inject constructor(): ItemRenderer<${itemName}RecyclerItem> {
 
     override fun getLayoutId(): Int =
         R.layout.${itemLayoutName}
@@ -13,10 +13,10 @@ class ${itemName}Renderer @Inject constructor(): ItemRenderer<${itemName}Display
     override fun createView(parent: ViewGroup): View =
         parent.inflate(getLayoutId(), false) //this is a kotlin extension
 
-    override fun render(itemView: View, item: ${itemName}DisplayData) =
+    override fun render(itemView: View, item: ${itemName}RecyclerItem) =
         bind(itemView, item)
 
-    private fun bind(view: View, data: ${itemName}DisplayData) {
+    private fun bind(view: View, data: ${itemName}RecyclerItem) {
         view.text_view.text = "What's up world"
        //Populate the data in your view
     }

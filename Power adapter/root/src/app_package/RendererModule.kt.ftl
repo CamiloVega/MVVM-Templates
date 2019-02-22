@@ -9,6 +9,7 @@ import ${packageName}.renderer.${itemName}Renderer.Companion.RENDER_KEY
 
 @Module
 abstract class ${itemName}RenderModule {
+    Add module to the list of modules on your activity/fragment 
 
     @Binds
     @IntoMap
@@ -16,8 +17,7 @@ abstract class ${itemName}RenderModule {
     internal abstract fun bindRenderer(template: ${itemName}Renderer): ItemRenderer<out RecyclerItem>
 
 
-    Add module to the list of modules on your activity/fragment 
-
+<#if includeAdapter>
     Paste this in fragment/activity 
     @Inject
     lateinit var dataSource: RecyclerDataSource
@@ -27,4 +27,5 @@ abstract class ${itemName}RenderModule {
     adapter = RecyclerAdapter(dataSource)
     #recycler_view.layoutManager = LinearLayoutManager(this.activity)
     #recycler_view.adapter = adapter
+    </#if>
 }
