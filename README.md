@@ -6,7 +6,7 @@ Set of templates to autogenerate MVVM classes and test
 clone the repository to the following path: 
 `$ANDROID_STUDIO_FOLDER$/Contents/plugins/android/lib/templates/MVVM-Templates`
 
-To use, create a package folder where you want your files to be created, Right click then new -> MVVM Template -> MVVM + Test
+To use, create a package folder where you want your files to be created, Right click then new -> Custom Template -> MVVM + Test
 
 ![Debug drawer](images/android-studio-screenshot.png)
 
