@@ -13,7 +13,7 @@ abstract class ${itemName}RenderModule {
 
     @Binds
     @IntoMap
-    @StringKey(RENDER_KEY)
+    @RenderKey(RENDER_KEY)
     internal abstract fun bindRenderer(template: ${itemName}Renderer): ItemRenderer<out RecyclerItem>
 
 
